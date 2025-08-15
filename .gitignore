@@ -25,7 +25,6 @@ dist/
 
 # JetBrains IDE
 .idea/
-
 # Unit test reports
 TEST*.xml
 
@@ -48,3 +47,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+package-lock.json
