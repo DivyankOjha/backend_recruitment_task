@@ -9,7 +9,7 @@ const enrichCitiesWithDescriptions = async (cities) => {
 
             if (!description) {
                 description = await wikipediaService.fetchDescription(city.city);
-                cache.set(cacheKey, description);
+                cache.set(cacheKey, description, 5 * 60); // Cache for 5 minutes
             }
 
             return {

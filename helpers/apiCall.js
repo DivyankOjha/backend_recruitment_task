@@ -9,8 +9,10 @@ const apiCall = async (options) => {
         else throw new Error('No data received from API');
     }
     catch (e) {
-        // console.error('API call error:', e);
-        throw new Error('API call failed: ' + e.message);
+        console.error('API call error:', e);
+
+        return null;
+        // throw new Error('API call failed: ' + e.message);
     }
 };
 

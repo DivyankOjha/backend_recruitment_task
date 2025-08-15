@@ -3,8 +3,7 @@ const {
 } = require('express-rate-limit');
 
 const rateLimiter = rateLimit({
-    
-    // Safe IPv4 + IPv6 handling
+   
     handler: (req, res) => {
         res.setHeader('X-RateLimit-Limit', req.rateLimit.limit);
         res.setHeader('X-RateLimit-Current', req.rateLimit.current);

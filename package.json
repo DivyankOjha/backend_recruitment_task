@@ -4,9 +4,9 @@
   "license": "ISC",
   "version": "1.0.0",
   "description": "A backend service to fetch and process data about the most polluted cities.",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app.js",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {

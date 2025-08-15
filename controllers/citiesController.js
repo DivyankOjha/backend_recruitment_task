@@ -1,4 +1,6 @@
 const enrichCitiesWithDescriptions = require('../helpers/enrichCitiesWithDescriptions');
+const filterValidCities = require('../helpers/filterValidCities');
+const reformatData = require('../helpers/reformatData');
 const pollutionService = require('../services/pollutionService');
 
 const getCities = async (req, res) => {
@@ -24,10 +26,9 @@ const getCities = async (req, res) => {
         }
       
         const pollutionData = await pollutionService.fetchPollutionData(countryCode, page, limit);
-        const normalized = pollutionService.reformatData(pollutionData, countryCode);
-        const validCities = pollutionService.filterValidCities(normalized);
+        const normalized = reformatData(pollutionData, countryCode);
+        const validCities = filterValidCities(normalized);
 
-        console.log('validCities', validCities);
         const enriched = await enrichCitiesWithDescriptions(validCities,);
 
         res.status(200).json({
